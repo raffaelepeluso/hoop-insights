@@ -1,17 +1,18 @@
 {% extends "base.html" %} {% block content %}
 <div class="container mt-5">
-  <h1 class="text-center text-warning mb-4">{{ player['name'] }}</h1>
+  <h1 class="text-left mb-4" style="color: #ff7f00">
+    #{{ player['jersey'] }} {{ player['name'] }}
+  </h1>
 
   <!-- Tabella compatta per le informazioni del giocatore -->
   <div class="player-info">
     <table class="table table-bordered table-striped table-hover">
       <thead class="bg-dark text-white">
         <tr>
-          <th>Jersey Number</th>
-          <th>Posistion</th>
-          <th>Height</th>
-          <th>Weight</th>
-          <th>Age</th>
+          <th>POSITION</th>
+          <th>HEIGHT</th>
+          <th>WEIGHT</th>
+          <th>AGE</th>
           <th>PPG</th>
           <th>APG</th>
           <th>RPG</th>
@@ -19,7 +20,6 @@
       </thead>
       <tbody>
         <tr>
-          <td>#{{ player['jersey'] }}</td>
           <td>{{ player['position'] }}</td>
           <td>{{ player['height'] }} m</td>
           <td>{{ player['weight'] }} kg</td>

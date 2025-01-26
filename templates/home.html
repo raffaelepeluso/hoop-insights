@@ -1,14 +1,13 @@
 {% extends "base.html" %} {% block content %}
 <div class="container mt-5">
-  <h1 class="text-center text-warning mb-4">Welcome to hoop insights!</h1>
-
   <div class="row">
+    <!-- Box Games -->
     <div class="col-md-6">
-      <div class="box">
-        <h2 class="text-center" style="color: #ff7f00">Games</h2>
-        <ul>
+      <div class="box border border-warning shadow p-3">
+        <h1 class="text-center mb-2" style="color: #ff7f00">Games</h1>
+        <ul class="list-group">
           {% for game in games %}
-          <li>
+          <li class="list-group-item">
             <a href="{{ url_for('get_game', id=game['id']) }}"
               >{{ game['home_team'] }} vs {{ game['away_team'] }}</a
             >
@@ -18,12 +17,13 @@
       </div>
     </div>
 
+    <!-- Box Players -->
     <div class="col-md-6">
-      <div class="box">
-        <h2 class="text-center" style="color: #ff7f00">Players</h2>
-        <ul>
+      <div class="box border border-warning shadow p-3">
+        <h1 class="text-center mb-2" style="color: #ff7f00">Players</h1>
+        <ul class="list-group">
           {% for player in players %}
-          <li>
+          <li class="list-group-item">
             <a href="{{ url_for('get_player', id=player['id']) }}"
               >#{{ player['jersey'] }} {{ player['name'] }}</a
             >
