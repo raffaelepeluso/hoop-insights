@@ -38,7 +38,7 @@ def get_game(id):
 
     if game:
         cursor.execute("""
-            SELECT players.name, player_stats.pts, player_stats.reb, player_stats.ast, 
+            SELECT players.name, players.id, player_stats.pts, player_stats.reb, player_stats.ast, 
                    player_stats.stl, player_stats.blk, player_stats.turn, player_stats.pf
             FROM player_stats
             JOIN players ON player_stats.player_id = players.id
