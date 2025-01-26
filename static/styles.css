@@ -1,0 +1,113 @@
+/* Corpo e Navigazione */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f7fa;
+  color: #333;
+}
+
+nav {
+  background-color: #1d3557; /* Colore scuro ispirato al basket */
+}
+
+nav a {
+  color: white;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Box Scrollabili della Home */
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.box {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 48%;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+/* Tabella per le informazioni del giocatore */
+.player-info table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.player-info th,
+.player-info td {
+  text-align: left;
+  padding: 16px;
+  border: 1px solid #ddd;
+}
+
+.player-info th {
+  background-color: #1d3557;
+  color: white;
+}
+
+.player-info td {
+  color: #333;
+}
+
+.player-info tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Tabella per le statistiche della partita */
+.game-stats table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+.game-stats th,
+.game-stats td {
+  text-align: left;
+  padding: 16px;
+  border: 1px solid #ddd;
+}
+
+.game-stats th {
+  background-color: #1d3557;
+  color: white;
+}
+
+.game-stats td {
+  color: #333;
+}
+
+.game-stats tr:hover {
+  background-color: #f1f1f1;
+}
+
+.game-stats h2 {
+  color: #ff7f00;
+  margin-bottom: 20px;
+}
+
+/* Media Queries per dispositivi mobili */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .player-info table th,
+  .player-info table td,
+  .game-stats table th,
+  .game-stats table td {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
