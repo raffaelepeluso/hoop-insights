@@ -1,17 +1,22 @@
 /* Corpo e Navigazione */
 body {
-  font-family: "Arial", sans-serif;
+  font-family: "Consolas", monospace;
+  font-size: 20px;
   background-color: #f4f7fa;
   color: #333;
+  margin: 0;
+  padding: 0;
 }
 
 nav {
   background-color: #1d3557; /* Colore scuro ispirato al basket */
+  padding: 15px 30px;
 }
 
 nav a {
   color: white;
   font-weight: bold;
+  text-decoration: none;
 }
 
 nav a:hover {
@@ -21,8 +26,9 @@ nav a:hover {
 /* Box Scrollabili della Home */
 .content {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Adattamento per schermi piccoli */
   justify-content: space-between;
+  gap: 20px; /* Spaziatura uniforme */
   margin-top: 30px;
 }
 
@@ -30,9 +36,61 @@ nav a:hover {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 48%;
+  flex: 1 1 calc(50% - 20px); /* Box simmetrici */
   padding: 20px;
-  margin-bottom: 30px;
+  max-height: 400px;
+  overflow-y: auto;
+  min-width: 300px; /* Larghezza minima */
+}
+
+.box h2 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #1d3557;
+}
+
+/* Elenchi nei box */
+ul {
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+}
+
+ul li {
+  background-color: #f9f9f9;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ul li:hover {
+  background-color: #e6e6e6;
+  cursor: pointer;
+}
+
+/* Link e pulsanti */
+a {
+  color: #1d3557;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background-color: #1d3557;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #457b9d;
 }
 
 /* Tabella per le informazioni del giocatore */
@@ -93,6 +151,43 @@ nav a:hover {
   margin-bottom: 20px;
 }
 
+/* Contenitore scrollabile per il Box Score */
+.scrollable-box {
+  max-height: 400px; /* Altezza limitata */
+  overflow-y: auto; /* Abilita scrolling */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabella nel Box Score */
+.scrollable-box table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.scrollable-box th,
+.scrollable-box td {
+  text-align: left;
+  padding: 16px;
+  border: 1px solid #ddd;
+}
+
+.scrollable-box th {
+  background-color: #1d3557;
+  color: white;
+}
+
+.scrollable-box td {
+  color: #333;
+}
+
+.scrollable-box tr:hover {
+  background-color: #f1f1f1;
+}
+
 /* Media Queries per dispositivi mobili */
 @media (max-width: 768px) {
   .content {
@@ -100,7 +195,7 @@ nav a:hover {
     margin-top: 20px;
   }
   .box {
-    width: 100%;
+    width: 100%; /* Larghezza massima */
     margin-bottom: 20px;
   }
   .player-info table th,
