@@ -53,17 +53,17 @@ VALUES
     ('Giuseppe Accomando', 21, 'Center', 1.92, 89, 27),
     ('Angelo Giella', 22, 'Guard', 1.70, 65, 29),
     ('Davide Festa', 77, 'Center', 1.93, 97, 22),
-    ('Daniele Lenguito', 90, 'Forward', 1.86, 90, 88),
+    ('Daniele Lenguito', 90, 'Forward', 1.86, 90, 26),
     ('Daniele Fratello', 0, 'Forward', 1.88, 90, 27),
     ('Emanuele Flora', 15, 'Forward', 1.86, 79, 27),
     ('Massimo Valore', 4, 'Center', 1.87, 100, 32);
 
 INSERT INTO games (home_team, away_team, home_score, away_score, location)
 VALUES
-    ('BPT Polisportiva Toriello', 'Hirpinian Nuts', 62, 61, 'Santo Stefano Del Sole'),
-    ('Avellino Boars', 'BPT Polisportiva Toriello', 53, 30, 'Avellino'),
-    ('BPT Polisportiva Toriello', 'Borace', 37, 47, 'Santo Stefano Del Sole'),
-    ('Mata Leao Benevento', 'BPT Polisportiva Toriello', 55, 29, 'Benevento');
+    ('BPT Polisportiva Toriello', 'Hirpinian Nuts', 62, 61, 'Palestra Comunale, Santo Stefano Del Sole'),
+    ('Avellino Boars', 'BPT Polisportiva Toriello', 53, 30, 'Palestra Bellizzi, Avellino'),
+    ('BPT Polisportiva Toriello', 'Borace', 37, 47, 'Palestra Comunale, Santo Stefano Del Sole'),
+    ('Mata Leao Benevento', 'BPT Polisportiva Toriello', 55, 29, 'Palestra Rummo, Benevento');
 
 INSERT INTO player_stats (player_id, game_id, pts, reb, ast, stl, blk, turn, pf)
 VALUES
