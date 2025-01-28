@@ -25,7 +25,8 @@ CREATE TABLE games (
     away_team VARCHAR(255),
     home_score INTEGER,
     away_score INTEGER,
-    location VARCHAR(255)
+    location VARCHAR(255),
+    date DATE
 );
 
 CREATE TABLE player_stats (
@@ -56,53 +57,56 @@ VALUES
     ('Daniele Lenguito', 90, 'Forward', 1.86, 90, 26),
     ('Daniele Fratello', 0, 'Forward', 1.88, 90, 27),
     ('Emanuele Flora', 15, 'Forward', 1.86, 79, 27),
-    ('Massimo Valore', 4, 'Center', 1.87, 100, 32);
+    ('Massimo Valore', 4, 'Center', 1.87, 140, 32),
+    ('Luca Santomassimo', 34, 'Center', 1.98, 110, 39);
 
-INSERT INTO games (home_team, away_team, home_score, away_score, location)
+INSERT INTO games (home_team, away_team, home_score, away_score, location, date)
 VALUES
-    ('BPT Polisportiva Toriello', 'Hirpinian Nuts', 62, 61, 'Palestra Comunale, Santo Stefano Del Sole'),
-    ('Avellino Boars', 'BPT Polisportiva Toriello', 53, 30, 'Palestra Bellizzi, Avellino'),
-    ('BPT Polisportiva Toriello', 'Borace', 37, 47, 'Palestra Comunale, Santo Stefano Del Sole'),
-    ('Mata Leao Benevento', 'BPT Polisportiva Toriello', 55, 29, 'Palestra Rummo, Benevento');
+    ('BPT Polisportiva Toriello', 'Borace', 37, 47, 'Palestra Comunale, Santo Stefano Del Sole', '2024-12-11'),
+    ('Mata Leao Benevento', 'BPT Polisportiva Toriello', 55, 29, 'Palestra Rummo, Benevento', '2024-12-16'),
+    ('BPT Polisportiva Toriello', 'Hirpinian Nuts', 62, 61, 'Palestra Comunale, Santo Stefano Del Sole', '2025-01-15'),
+    ('Avellino Boars', 'BPT Polisportiva Toriello', 53, 30, 'Palestra Bellizzi, Avellino', '2025-01-23');
+    
 
 INSERT INTO player_stats (player_id, game_id, pts, reb, ast, stl, blk, turn, pf)
 VALUES
-    (2, 1, 12, 0, 0, 0, 0, 0, 3),
-    (3, 1, 5, 0, 0, 0, 0, 0, 3),
-    (4, 1, 26, 0, 0, 0, 0, 0, 4),
-    (5, 1, 0, 0, 0, 0, 0, 0, 1),
-    (6, 1, 5, 0, 0, 0, 0, 0, 4),
-    (7, 1, 1, 0, 0, 0, 0, 0, 1),
-    (9, 1, 1, 0, 0, 0, 0, 0, 5),
-    (10, 1, 12, 0, 0, 0, 0, 0, 4),
-    (1, 2, 0, 0, 0, 0, 0, 0, 1),
-    (2, 2, 12, 0, 0, 0, 0, 0, 1),
-    (3, 2, 0, 0, 0, 0, 0, 0, 3),
-    (4, 2, 13, 0, 0, 0, 0, 0, 4),
-    (5, 2, 0, 0, 0, 0, 0, 0, 0),
-    (6, 2, 1, 0, 0, 0, 0, 0, 1),
-    (7, 2, 0, 0, 0, 0, 0, 0, 0),
-    (8, 2, 2, 0, 0, 0, 0, 0, 2),
-    (9, 2, 2, 0, 0, 0, 0, 0, 2),
-    (11, 2, 0, 0, 0, 0, 0, 0, 0),
-    (1, 3, 6, 0, 0, 0, 0, 0, 5),
-    (2, 3, 7, 0, 0, 0, 0, 0, 2),
-    (3, 3, 11, 0, 0, 0, 0, 0, 2),
-    (5, 3, 0, 0, 0, 0, 0, 0, 0),
-    (6, 3, 4, 0, 0, 0, 0, 0, 1),
-    (7, 3, 0, 0, 0, 0, 0, 0, 1),
-    (8, 3, 2, 0, 0, 0, 0, 0, 0),
-    (9, 3, 7, 0, 0, 0, 0, 0, 1),
-    (12, 3, 0, 0, 0, 0, 0, 0, 1),
-    (1, 4, 2, 0, 0, 0, 0, 0, 0),
-    (2, 4, 4, 0, 0, 0, 0, 0, 1),
-    (3, 4, 6, 0, 0, 0, 0, 0, 0),
-    (4, 4, 8, 0, 0, 0, 0, 0, 2),
-    (5, 4, 0, 0, 0, 0, 0, 0, 2),
-    (6, 4, 2, 0, 0, 0, 0, 0, 1),
-    (8, 4, 1, 0, 0, 0, 0, 0, 1),
-    (9, 4, 4, 0, 0, 0, 0, 0, 2),
-    (10, 4, 2, 0, 0, 0, 0, 0, 3);
+    (2, 3, 12, 0, 0, 0, 0, 0, 3),
+    (3, 3, 5, 0, 0, 0, 0, 0, 3),
+    (4, 3, 26, 0, 0, 0, 0, 0, 4),
+    (5, 3, 0, 0, 0, 0, 0, 0, 1),
+    (6, 3, 5, 0, 0, 0, 0, 0, 4),
+    (7, 3, 1, 0, 0, 0, 0, 0, 1),
+    (9, 3, 1, 0, 0, 0, 0, 0, 5),
+    (10, 3, 12, 0, 0, 0, 0, 0, 4),
+    (1, 4, 0, 0, 0, 0, 0, 0, 1),
+    (2, 4, 12, 0, 0, 0, 0, 0, 1),
+    (3, 4, 0, 0, 0, 0, 0, 0, 3),
+    (4, 4, 13, 0, 0, 0, 0, 0, 4),
+    (5, 4, 0, 0, 0, 0, 0, 0, 0),
+    (6, 4, 1, 0, 0, 0, 0, 0, 1),
+    (7, 4, 0, 0, 0, 0, 0, 0, 0),
+    (8, 4, 2, 0, 0, 0, 0, 0, 2),
+    (9, 4, 2, 0, 0, 0, 0, 0, 2),
+    (11, 4, 0, 0, 0, 0, 0, 0, 0),
+    (1, 1, 6, 0, 0, 0, 0, 0, 5),
+    (2, 1, 7, 0, 0, 0, 0, 0, 2),
+    (3, 1, 11, 0, 0, 0, 0, 0, 2),
+    (5, 1, 0, 0, 0, 0, 0, 0, 0),
+    (6, 1, 4, 0, 0, 0, 0, 0, 1),
+    (7, 1, 0, 0, 0, 0, 0, 0, 1),
+    (8, 1, 2, 0, 0, 0, 0, 0, 0),
+    (9, 1, 7, 0, 0, 0, 0, 0, 1),
+    (12, 1, 0, 0, 0, 0, 0, 0, 1),
+    (1, 2, 2, 0, 0, 0, 0, 0, 0),
+    (2, 2, 4, 0, 0, 0, 0, 0, 1),
+    (3, 2, 6, 0, 0, 0, 0, 0, 0),
+    (4, 2, 8, 0, 0, 0, 0, 0, 2),
+    (5, 2, 0, 0, 0, 0, 0, 0, 2),
+    (6, 2, 2, 0, 0, 0, 0, 0, 1),
+    (8, 2, 1, 0, 0, 0, 0, 0, 1),
+    (9, 2, 4, 0, 0, 0, 0, 0, 2),
+    (10, 2, 2, 0, 0, 0, 0, 0, 3),
+    (13, 2, 0, 0, 0, 0, 0, 0, 1);
 """
 
 # Creazione della cartella 'data' se non esiste
