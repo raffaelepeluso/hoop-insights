@@ -1,4 +1,3 @@
-/* Corpo e Navigazione */
 body {
   font-family: "Consolas", monospace;
   font-size: 20px;
@@ -8,201 +7,20 @@ body {
   padding: 0;
 }
 
-nav {
-  background-color: #1d3557; /* Colore scuro ispirato al basket */
-  padding: 15px 30px;
+.card.border-warning {
+  border: 3px solid #ff5722 !important; /* Colore del bordo */
+  border-radius: 8px; /* Angoli arrotondati */
 }
 
-nav a {
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
+/* Aggiungere uno stile per i link all'interno della card */
+.card a {
+  color: black; /* Colore del link arancione */
+  text-decoration: none; /* Rimuove la sottolineatura */
+  font-weight: bold; /* Grassetto per i link */
+  transition: color 0.1s ease; /* Effetto di transizione per il colore */
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* Box Scrollabili della Home */
-.content {
-  display: flex;
-  flex-wrap: wrap; /* Adattamento per schermi piccoli */
-  justify-content: space-between;
-  gap: 20px; /* Spaziatura uniforme */
-  margin-top: 30px;
-}
-
-.box {
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  flex: 1 1 calc(50% - 20px); /* Box simmetrici */
-  padding: 20px;
-  max-height: 400px;
-  overflow-y: auto;
-  min-width: 300px; /* Larghezza minima */
-}
-
-.box h2 {
-  margin-bottom: 15px;
-  font-size: 18px;
-  color: #1d3557;
-}
-
-/* Elenchi nei box */
-ul {
-  padding: 0;
-  list-style-type: none;
-  margin: 0;
-}
-
-ul li {
-  background-color: #f9f9f9;
-  padding: 12px;
-  margin: 8px 0;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-ul li:hover {
-  background-color: #e6e6e6;
-  cursor: pointer;
-}
-
-/* Link e pulsanti */
-a {
-  color: #1d3557;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-button {
-  background-color: #1d3557;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-button:hover {
-  background-color: #457b9d;
-}
-
-/* Tabella per le informazioni del giocatore */
-.player-info table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.player-info th,
-.player-info td {
-  text-align: left;
-  padding: 16px;
-  border: 1px solid #ddd;
-}
-
-.player-info th {
-  background-color: #1d3557;
-  color: white;
-}
-
-.player-info td {
-  color: #333;
-}
-
-.player-info tr:hover {
-  background-color: #f1f1f1;
-}
-
-/* Tabella per le statistiche della partita */
-.game-stats table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 30px;
-}
-
-.game-stats th,
-.game-stats td {
-  text-align: left;
-  padding: 16px;
-  border: 1px solid #ddd;
-}
-
-.game-stats th {
-  background-color: #1d3557;
-  color: white;
-}
-
-.game-stats td {
-  color: #333;
-}
-
-.game-stats tr:hover {
-  background-color: #f1f1f1;
-}
-
-.game-stats h2 {
-  color: #ff7f00;
-  margin-bottom: 20px;
-}
-
-/* Contenitore scrollabile per il Box Score */
-.scrollable-box {
-  max-height: 400px; /* Altezza limitata */
-  overflow-y: auto; /* Abilita scrolling */
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 10px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Tabella nel Box Score */
-.scrollable-box table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.scrollable-box th,
-.scrollable-box td {
-  text-align: left;
-  padding: 16px;
-  border: 1px solid #ddd;
-}
-
-.scrollable-box th {
-  background-color: #1d3557;
-  color: white;
-}
-
-.scrollable-box td {
-  color: #333;
-}
-
-.scrollable-box tr:hover {
-  background-color: #f1f1f1;
-}
-
-/* Media Queries per dispositivi mobili */
-@media (max-width: 768px) {
-  .content {
-    flex-direction: column;
-    margin-top: 20px;
-  }
-  .box {
-    width: 100%; /* Larghezza massima */
-    margin-bottom: 20px;
-  }
-  .player-info table th,
-  .player-info table td,
-  .game-stats table th,
-  .game-stats table td {
-    font-size: 14px;
-    padding: 10px;
-  }
+.card a:hover {
+  color: #ff5722; /* Colore più scuro al passaggio del mouse */
+  text-decoration: underline; /* Aggiunge la sottolineatura al passaggio del mouse */
 }

@@ -1,45 +1,51 @@
 {% extends "base.html" %} {% block content %}
-<div class="container mt-5">
-  <h1 class="text-left mb-4" style="color: #ff7f00">
-    {{ game.home_team }} {{ game.home_score }} - {{ game.away_team }} {{
-    game.away_score }}
-  </h1>
-  <h3 class="text-left mb-4" style="color: #ff7f00">{{ game.location }}</h3>
-
-  <!-- Tabella per le statistiche dei giocatori della partita -->
-  <div class="scrollable-box">
-    <table class="table table-bordered table-striped table-hover">
-      <thead class="bg-dark text-white">
-        <tr>
-          <th>PLAYER</th>
-          <th>PTS</th>
-          <th>REB</th>
-          <th>AST</th>
-          <th>STL</th>
-          <th>BLK</th>
-          <th>TO</th>
-          <th>PF</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for stat in player_stats %}
-        <tr>
-          <td>
-            <a href="{{ url_for('get_player', id=stat.id) }}"
-              >{{ stat.name }}</a
-            >
-          </td>
-          <td>{{ stat.pts }}</td>
-          <td>{{ stat.reb }}</td>
-          <td>{{ stat.ast }}</td>
-          <td>{{ stat.stl }}</td>
-          <td>{{ stat.blk }}</td>
-          <td>{{ stat.turn }}</td>
-          <td>{{ stat.pf }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+<div class="card border-warning mt-3">
+  <div class="card-header bg-dark text-white">
+    <h1 class="card-title text-center">
+      {{ game.home_team }} {{ game.home_score }} - {{ game.away_team }} {{
+      game.away_score }}
+    </h1>
+    <h3 class="card-subtitle text-center">
+      <i class="bi bi-geo-alt-fill me-2"></i>{{ game.location }}
+    </h3>
+  </div>
+  <div class="card-body" style="max-height: 400px; overflow-y: auto">
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead class="table-dark">
+          <tr>
+            <th>PLAYER</th>
+            <th>PTS</th>
+            <th>REB</th>
+            <th>AST</th>
+            <th>STL</th>
+            <th>BLK</th>
+            <th>TO</th>
+            <th>PF</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for stat in player_stats %}
+          <tr>
+            <td>
+              <a
+                href="{{ url_for('get_player', id=stat.id) }}"
+                class="table-link"
+                >{{ stat.name }}</a
+              >
+            </td>
+            <td>{{ stat.pts }}</td>
+            <td>{{ stat.reb }}</td>
+            <td>{{ stat.ast }}</td>
+            <td>{{ stat.stl }}</td>
+            <td>{{ stat.blk }}</td>
+            <td>{{ stat.turn }}</td>
+            <td>{{ stat.pf }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 {% endblock %}

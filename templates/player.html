@@ -1,13 +1,11 @@
 {% extends "base.html" %} {% block content %}
-<div class="container mt-5">
-  <h1 class="text-left mb-4" style="color: #ff7f00">
-    #{{ player['jersey'] }} {{ player['name'] }}
-  </h1>
-
-  <!-- Tabella compatta per le informazioni del giocatore -->
-  <div class="player-info">
-    <table class="table table-bordered table-striped table-hover">
-      <thead class="bg-dark text-white">
+<div class="card border-warning mt-3">
+  <div class="card-header bg-dark text-white text-center">
+    <h1>#{{ player['jersey'] }} {{ player['name'] }}</h1>
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered">
+      <thead class="table-dark">
         <tr>
           <th>POSITION</th>
           <th>HEIGHT</th>
@@ -23,7 +21,7 @@
           <td>{{ player['position'] }}</td>
           <td>{{ player['height'] }} m</td>
           <td>{{ player['weight'] }} kg</td>
-          <td>{{ player['age'] }} years</td>
+          <td>{{ player['age'] }}</td>
           <td>{{ player['ppg'] }}</td>
           <td>{{ player['apg'] }}</td>
           <td>{{ player['rpg'] }}</td>
