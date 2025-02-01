@@ -65,8 +65,8 @@ VALUES
     ('BPT Polisportiva Toriello', 'Borace', 37, 47, 'Palestra Comunale, Santo Stefano Del Sole', '2024-12-11'),
     ('Mata Leao Benevento', 'BPT Polisportiva Toriello', 55, 29, 'Palestra Rummo, Benevento', '2024-12-16'),
     ('BPT Polisportiva Toriello', 'Hirpinian Nuts', 62, 61, 'Palestra Comunale, Santo Stefano Del Sole', '2025-01-15'),
-    ('Avellino Boars', 'BPT Polisportiva Toriello', 53, 30, 'Palestra Bellizzi, Avellino', '2025-01-23');
-    
+    ('Avellino Boars', 'BPT Polisportiva Toriello', 53, 30, 'Palestra Bellizzi, Avellino', '2025-01-23'),
+    ('Borace', 'BPT Polisportiva Toriello', 42, 46, 'Country Sport, Avellino', '2025-01-30');
 
 INSERT INTO player_stats (player_id, game_id, pts, reb, ast, stl, blk, turn, pf)
 VALUES
@@ -106,7 +106,16 @@ VALUES
     (8, 2, 1, 0, 0, 0, 0, 0, 1),
     (9, 2, 4, 0, 0, 0, 0, 0, 2),
     (10, 2, 2, 0, 0, 0, 0, 0, 3),
-    (13, 2, 0, 0, 0, 0, 0, 0, 1);
+    (13, 2, 0, 0, 0, 0, 0, 0, 1),
+    (1, 5, 5, 0, 0, 0, 0, 0, 4),
+    (2, 5, 10, 0, 0, 0, 0, 0, 3),
+    (3, 5, 10, 0, 0, 0, 0, 0, 1),
+    (4, 5, 15, 0, 0, 0, 0, 0, 3),
+    (5, 5, 2, 0, 0, 0, 0, 0, 1),
+    (6, 5, 2, 0, 0, 0, 0, 0, 2),
+    (7, 5, 2, 0, 0, 0, 0, 0, 1),
+    (9, 5, 0, 0, 0, 0, 0, 0, 4),
+    (11, 5, 0, 0, 0, 0, 0, 0, 4);
 """
 
 # Creazione della cartella 'data' se non esiste
