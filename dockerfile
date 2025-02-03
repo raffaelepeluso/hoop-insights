@@ -17,7 +17,7 @@ COPY . /app/
 RUN python init_db.py
 
 # Esponi la porta per Flask
-EXPOSE 8000
+EXPOSE 80
 
 # Avvia il server Flask
 CMD ["python", "app.py"]
