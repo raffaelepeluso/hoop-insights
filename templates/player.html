@@ -1,33 +1,35 @@
 {% extends "base.html" %} {% block content %}
 <div class="card border-warning mt-3">
   <div class="card-header bg-dark text-white text-center">
-    <h1>#{{ player['jersey'] }} {{ player['name'] }}</h1>
+    <h2>#{{ player['jersey'] }} {{ player['name'] }}</h2>
   </div>
   <div class="card-body">
-    <table class="table table-bordered">
-      <thead class="table-dark">
-        <tr>
-          <th>POSITION</th>
-          <th>HEIGHT</th>
-          <th>WEIGHT</th>
-          <th>AGE</th>
-          <th>PPG</th>
-          <th>APG</th>
-          <th>RPG</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{{ player['position'] }}</td>
-          <td>{{ player['height'] }} m</td>
-          <td>{{ player['weight'] }} kg</td>
-          <td>{{ player['age'] }}</td>
-          <td>{{ player['ppg'] }}</td>
-          <td>{{ player['apg'] }}</td>
-          <td>{{ player['rpg'] }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>POSITION</th>
+            <th>HEIGHT</th>
+            <th>WEIGHT</th>
+            <th>AGE</th>
+            <th>PPG</th>
+            <th>APG</th>
+            <th>RPG</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ player['position'] }}</td>
+            <td>{{ player['height'] }} m</td>
+            <td>{{ player['weight'] }} kg</td>
+            <td>{{ player['age'] }}</td>
+            <td>{{ player['ppg'] }}</td>
+            <td>{{ player['apg'] }}</td>
+            <td>{{ player['rpg'] }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 {% endblock %}

@@ -1,17 +1,17 @@
 {% extends "base.html" %} {% block content %}
 <div class="card border-warning mt-3">
   <div class="card-header bg-dark text-white">
-    <h1 class="card-title text-center">
+    <h2 class="card-title text-center">
       {{ game.home_team }} {{ game.home_score }} - {{ game.away_team }} {{
       game.away_score }}
-    </h1>
+    </h2>
     <h3 class="card-subtitle text-center">
       <i class="bi bi-geo-alt-fill me-2"></i>{{ game.location }}
     </h3>
   </div>
-  <div class="card-body" style="max-height: 400px; overflow-y: auto">
+  <div class="card-body">
     <div class="table-responsive">
-      <table class="table table-bordered">
+      <table class="table table-striped">
         <thead class="table-dark">
           <tr>
             <th>PLAYER</th>
