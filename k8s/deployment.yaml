@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hoop-insights-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hoop-insights
+  template:
+    metadata:
+      labels:
+        app: hoop-insights
+    spec:
+      containers:
+        - name: hoop-insights
+          image: raffaelepeluso/hoop-insights:latest
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hoop-insights-service
+spec:
+  selector:
+    app: hoop-insights
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer
