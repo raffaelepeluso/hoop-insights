@@ -172,3 +172,11 @@ cython_debug/
 
 # SQLite
 data/database.db
+
+# Stato di Terraform (contiene dati sensibili)
+terraform.tfstate
+terraform.tfstate.backup
+
+# File temporanei
+.terraform/
+.terraform.lock.hcl
