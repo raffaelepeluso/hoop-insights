@@ -1,0 +1,59 @@
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout del codice
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Login su Docker Hub
+      - name: Set DockerHub Credentials
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: |
+          echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+
+      # Step 3: Costruzione dell'immagine Docker
+      - name: Build Docker image
+        run: |
+          docker build -t raffaelepeluso/hoop-insights:${{ github.sha }} .
+
+      # Step 4: Push dell'immagine su Docker Hub
+      - name: Push Docker image to Docker Hub
+        run: |
+          docker push raffaelepeluso/hoop-insights:${{ github.sha }}
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    needs: build
+
+    steps:
+      # Step 1: Checkout del codice
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Autenticazione con Azure
+      - name: Set Azure Credentials
+        uses: azure/login@v1
+        with:
+          app-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
+
+      # Step 3: Ottieni le credenziali di Kubernetes per AKS
+      - name: Get AKS credentials
+        run: |
+          az aks get-credentials --resource-group rg-hoop-insights --name aks-hoop-insights
+
+      # Step 4: Deploy su AKS
+      - name: Deploy to AKS
+        run: |
+          kubectl apply -f k8s/deployment.yaml
+
+      # Step 5: Verifica lo stato del deploy
+      - name: Check Kubernetes pods
+        run: |
+          kubectl get pods

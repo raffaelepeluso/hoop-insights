@@ -180,3 +180,4 @@ terraform.tfstate.backup
 # File temporanei
 .terraform/
 .terraform.lock.hcl
+.terraform.tfstate.lock.info
