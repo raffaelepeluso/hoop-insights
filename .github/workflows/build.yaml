@@ -1,0 +1,29 @@
+name: build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set DockerHub Credentials
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: |
+          echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+
+      - name: Build Docker image
+        run: |
+          docker build -t raffaelepeluso/hoop-insights:${{ github.sha }} .
+
+      - name: Push Docker image to Docker Hub
+        run: |
+          docker push raffaelepeluso/hoop-insights:${{ github.sha }}
